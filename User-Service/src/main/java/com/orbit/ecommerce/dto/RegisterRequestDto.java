@@ -1,10 +1,13 @@
 package com.orbit.ecommerce.dto;
 
+import com.orbit.ecommerce.model.Role;
+
 public class RegisterRequestDto {
 
 	private String name;
 	private String email;
 	private String password;
+	private Role role;
 	
 	public String getName() {
 		return name;
@@ -23,6 +26,12 @@ public class RegisterRequestDto {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Role getRole() {
+		return role;
+	}
+	public void setRole(Role role) {
+		this.role = role;
 	}
 	
 }

@@ -38,7 +38,11 @@ public class UsersServiceImpl implements UsersService {
 		user.setName(request.getName());
 		user.setEmail(request.getEmail());
 		user.setPassword(encoder.encode(request.getPassword()));
-		user.setRole(Role.CUSTOMER);
+		if (request.getRole() != null) {
+	        user.setRole(request.getRole());
+	    } else {
+	        user.setRole(Role.CUSTOMER);
+	    }
 		
 		User savedUser = usersRepository.save(user);
 		
